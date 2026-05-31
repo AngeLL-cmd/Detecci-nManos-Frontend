@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGesture — Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="site">
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="12" width="4" height="9" rx="1"/>
+                        <rect x="10" y="8" width="4" height="13" rx="1"/>
+                        <rect x="17" y="4" width="4" height="17" rx="1"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="brand-name">SmartGesture</span>
+                    <span class="brand-sub">Analytics Platform</span>
+                </span>
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Detector</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="historial.html">Historial</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <div class="page-head">
+            <span class="page-tag">Panel de control</span>
+            <h1>Dashboard estadístico</h1>
+            <p>Métricas de detección por categoría. Actualización automática cada 5 segundos.</p>
+        </div>
+
+        <section class="cards">
+
+            <div class="card card--total">
+                <h3>Total</h3>
+                <p id="total">0</p>
+            </div>
+
+            <div class="card card--aprobacion">
+                <h3>Aprobación</h3>
+                <p id="aprobacion">0</p>
+            </div>
+
+            <div class="card card--consulta">
+                <h3>Consulta</h3>
+                <p id="consulta">0</p>
+            </div>
+
+            <div class="card card--atencion">
+                <h3>Atención</h3>
+                <p id="atencion">0</p>
+            </div>
+
+            <div class="card card--desacuerdo">
+                <h3>Desacuerdo</h3>
+                <p id="desacuerdo">0</p>
+            </div>
+
+        </section>
+
+        <div class="charts-row">
+
+            <section class="chart-container">
+                <p class="chart-label">Volumen por gesto</p>
+                <p class="chart-desc">Total de detecciones registradas por categoría</p>
+                <canvas id="barChart"></canvas>
+            </section>
+
+            <section class="chart-container">
+                <p class="chart-label">Distribución porcentual</p>
+                <p class="chart-desc">Participación relativa de cada gesto</p>
+                <canvas id="pieChart"></canvas>
+            </section>
+
+        </div>
+
+        <section class="chart-container chart-container--full">
+            <p class="chart-label">Calidad de detección por gesto</p>
+            <p class="chart-desc">Distribución de registros por rango de confianza (90% – 100%)</p>
+            <canvas id="confidenceChart"></canvas>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        SmartGesture Analytics Platform · Panel estadístico
+    </footer>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

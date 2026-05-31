@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGesture — Historial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="site">
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="12" width="4" height="9" rx="1"/>
+                        <rect x="10" y="8" width="4" height="13" rx="1"/>
+                        <rect x="17" y="4" width="4" height="17" rx="1"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="brand-name">SmartGesture</span>
+                    <span class="brand-sub">Analytics Platform</span>
+                </span>
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Detector</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="historial.html" class="active">Historial</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <div class="page-head">
+            <span class="page-tag">Base de datos</span>
+            <h1>Historial de detecciones</h1>
+            <p>Registro completo de detecciones con gesto, nivel de confianza y marca temporal.</p>
+        </div>
+
+        <div class="table-panel">
+
+            <div class="table-panel__top">
+                <h2>Registros del sistema</h2>
+                <span>Ordenados por fecha descendente</span>
+            </div>
+
+            <div class="table-scroll">
+                <table id="tablaHistorial">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Gesto</th>
+                            <th>Confianza</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        SmartGesture Analytics Platform · Registro de detecciones
+    </footer>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script>
+
+async function cargarHistorial() {
+
+    const response =
+        await fetch(
+            "http://localhost:3000/api/detecciones"
+        );
+
+    const datos =
+        await response.json();
+
+    const tbody =
+        document.querySelector(
+            "#tablaHistorial tbody"
+        );
+
+    tbody.innerHTML = "";
+
+    datos.data.forEach(item => {
+
+        tbody.innerHTML += `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.gesto}</td>
+                <td>${item.confianza}%</td>
+                <td>${item.fecha}</td>
+            </tr>
+        `;
+
+    });
+
+}
+
+cargarHistorial();
+
+</script>
+
+</body>
+</html>
