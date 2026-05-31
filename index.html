@@ -45,6 +45,53 @@
 
         <section class="dashboard-home">
 
+            <aside class="gesture-legend panel" aria-label="Guía de gestos">
+                <div class="panel-head gesture-legend__head">
+                    <span class="gesture-legend__tag">Referencia</span>
+                    <h2>Guía de gestos</h2>
+                    <p>Señales que el sistema reconoce en tiempo real</p>
+                </div>
+                <div class="panel-body gesture-legend__body">
+                    <ul class="gesture-legend__list">
+                        <li class="gesture-card gesture-card--success">
+                            <div class="gesture-card__icon" aria-hidden="true">👍</div>
+                            <div class="gesture-card__content">
+                                <span class="gesture-card__name">Aprobación</span>
+                                <span class="gesture-card__desc">Confirma una propuesta o acuerdo</span>
+                            </div>
+                        </li>
+                        <li class="gesture-card gesture-card--info">
+                            <div class="gesture-card__icon" aria-hidden="true">☝️</div>
+                            <div class="gesture-card__content">
+                                <span class="gesture-card__name">Consulta</span>
+                                <span class="gesture-card__desc">Solicita turno o aclaración</span>
+                            </div>
+                        </li>
+                        <li class="gesture-card gesture-card--warning">
+                            <div class="gesture-card__icon" aria-hidden="true">✋</div>
+                            <div class="gesture-card__content">
+                                <span class="gesture-card__name">Atención</span>
+                                <span class="gesture-card__desc">Pide foco o interrupción breve</span>
+                            </div>
+                        </li>
+                        <li class="gesture-card gesture-card--danger">
+                            <div class="gesture-card__icon" aria-hidden="true">✊</div>
+                            <div class="gesture-card__content">
+                                <span class="gesture-card__name">Desacuerdo</span>
+                                <span class="gesture-card__desc">Expresa objeción o disconformidad</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="gesture-legend__tip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                        <span>Mantenga la mano centrada y con buena iluminación</span>
+                    </div>
+                </div>
+            </aside>
+
             <div class="camera-section panel">
                 <div class="panel-head">
                     <h2>Cámara en vivo</h2>
