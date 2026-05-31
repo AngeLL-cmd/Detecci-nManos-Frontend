@@ -1,4 +1,4 @@
-const API_URL = "https://smartgesture-api.onrender.com/api";
+const API_URL = "https://detecciongestos-backend.onrender.com";
 
 async function guardarDeteccion(gesto, confianza) {
 
