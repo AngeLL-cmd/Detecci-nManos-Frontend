@@ -78,13 +78,10 @@
 
 async function cargarHistorial() {
 
-    const response =
-        await fetch(
-            "http://localhost:3000/api/detecciones"
-        );
-
     const datos =
-        await response.json();
+        await obtenerDetecciones();
+
+    if (!datos?.success) return;
 
     const tbody =
         document.querySelector(

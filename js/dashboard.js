@@ -19,7 +19,7 @@ async function cargarDashboard() {
     const respuesta =
         await obtenerEstadisticas();
 
-    if (!respuesta.success) return;
+    if (!respuesta?.success) return;
 
     const stats =
         respuesta.estadisticas;
